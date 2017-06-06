@@ -34,7 +34,7 @@ const ScrollableTabView = React.createClass({
     onChangeTab: PropTypes.func,
     onScroll: PropTypes.func,
     renderTabBar: PropTypes.any,
-    style: ViewPropTypes.style,
+    style: PropTypes.any,
     contentProps: PropTypes.object,
     scrollWithoutAnimation: PropTypes.bool,
     locked: PropTypes.bool,
@@ -258,6 +258,9 @@ const ScrollableTabView = React.createClass({
     }
     if (this.props.tabBarUnderlineStyle) {
       tabBarProps.underlineStyle = this.props.tabBarUnderlineStyle;
+    }
+		if(this.props.style) {
+      tabBarProps.style = this.props.style;
     }
     if (overlayTabs) {
       tabBarProps.style = {
